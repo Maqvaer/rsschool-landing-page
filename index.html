@@ -17,7 +17,7 @@
             <li><a href="#favorite-coffee">Favorite coffee</a></li>
             <li><a href="#contact-us">About</a></li>
             <li><a href="#mobile-app">Mobile app</a></li>
-            <li><a href="">Contact us</a></li>
+            <li><a href="#contact-info">Contact us</a></li>
          </ul>
       </nav>
       <div class="actions">
@@ -46,7 +46,7 @@
     <section id="favorite-coffee">
       <h2>Choose your <span>favorite</span> coffee</h2>
       <div class="slider">
-      <button class="arrow" id="left">←</button>      
+      <button class="arrow" id="left-arrow">←</button>      
       <div id="slider">
          <div class="slide">
             <img src="./img/coffee-slider-1.svg" alt="coffee-slider-1">
@@ -56,12 +56,18 @@
          </div>
          <div class="slide">
             <img src="./img/coffee-slider-2.svg" alt="coffee-slider-2">
+             <h3>Caramel Macchiato</h3>
+            <p>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+            <h3>$5.00</h3>
          </div>
          <div class="slide">
             <img src="./img/coffee-slider-3.svg" alt="coffee-slider-3">
+              <h3>Ice coffee</h3>
+            <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+            <h3>$4.50</h3>
          </div>
       </div>
-      <button class="arrow" id="right" >→</button>
+      <button class="arrow" id="right-arrow" >→</button>
       </div>
     </section>
     <section id="contact-us">
@@ -77,14 +83,49 @@
       <div>
          <h2><span>Download</span> our app<br> to start ordering</h2>
          <p>Download the Resource app today and experience the comfort of ordering your<br>favorite coffee from wherever you are</p>
-         </div>
-       <img src="./img/mobile-screens.svg">  
+          <div class="offer-buttons">
+             <button class="offer-button">
+               <img src="./img/app-store.svg" alt="app=store">
+               <div>
+               <p class="caption">Available on the</p>
+               <p>App Store</p>
+               </div>
+            </button>
+             <button class="offer-button">
+               <img src="./img/google-play.svg" alt="google-play">
+               <div>
+               <p class="caption">Available on the</p>
+               <p>Google Play</p>
+               </div>
+             </button>
+            </div>
+      </div>
+       <img src="./img/mobile-screens.svg" alt="mobile-screens">      
     </section>
    </main>
    <footer>
          <div><h2>Sip, Savor, Smile.<br><span>It’s coffee time!</span></h2>
+           <div class="socials">
+               <button class="social"><img src="./img/twitter.svg"></button>
+               <button class="social"><img src="./img/instagram.svg"></button>
+               <button class="social"><img src="./img/facebook.svg"></button>
+           </div> 
          </div>
-         <div></div>
+         <div id="contact-info">
+            <h3>Contact us</h3>
+            <a class="contact" href="https://maps.app.goo.gl/C9LFpzVpVExd2MCj6" target="_blank">
+               <img src="./img/pin-alt.svg" alt="pin-alt">
+               <p>8558 Green Rd.,  LA</p>
+            </a>
+            <a class="contact" href="tel:+16035550123">
+             <img src="./img/phone.svg" alt="phone">
+               <p>+1 (603) 555-0123</p>
+            </a>
+            <a class="contact">
+               <img src="./img/clock.svg" alt="clock">
+               <p>Mon–Sat: 9:00–23:00</p>
+            </a>
+         </div>
    </footer>
    <script src="./src/script.js"></script>
 </body>
