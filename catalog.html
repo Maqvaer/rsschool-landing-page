@@ -35,12 +35,106 @@
          </div>
       </div>
    </header>
-   <main>
-    </main>
-   <footer>
-         <div><h2>Sip, Savor, Smile.<br><span>It’s coffee time!</span></h2>
+   <main id="catalog-menu">
+      <h2>Behind each of our cups<br>hides an <span>amazing surprise</span></h2>
+      <div class="catalog-tabs">
+         <button class="catalog-tab catalog-tab-active">
+            <div class="catalog-tab-icon">
+               <img src="./img/tab-coffee.png" alt="tab-coffee">
+            </div>
+            <p class="catalog-tab-name">Coffee</p>
+         </button>
+         <button class="catalog-tab">
+             <div class="catalog-tab-icon">
+               <img src="./img/tab-tea.png" alt="tab-tea">
+            </div>
+            <p class="catalog-tab-name">Tea</p>
+         </button>
+         <button class="catalog-tab">
+             <div class="catalog-tab-icon">
+               <img src="./img/tab-desert.png" alt="tab-desert">
+            </div>
+            <p class="catalog-tab-name">Desert</p>
+         </button>
+      </div>
+      <section class="cards" id="catalog-coffee">
+         <div class="card">
+            <img src="./img/coffee-1.jpg" alt="coffee-1">
+            <h3>Irish coffee</h3>
+            <p>Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+            <h3>$7.00</h3>
          </div>
-         <div></div>
+         <div class="card">
+            <img src="./img/coffee-2.jpg" alt="coffee-2">
+            <h3>Kahlua coffee</h3>
+            <p>Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+            <h3>$7.00</h3>
+         </div>
+         <div class="card">
+            <img src="./img/coffee-3.jpg" alt="coffee-3">
+            <h3>Honey raf</h3>
+            <p>Espresso with frothed milk, cream and aromatic honey</p>
+            <h3>$5.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/coffee-4.jpg" alt="coffee-4">
+            <h3>Ice cappuccino</h3>
+            <p>Cappuccino with soft thick foam in summer version with ice</p>
+            <h3>$5.00</h3>
+         </div>
+         <div class="card">
+            <img src="./img/coffee-5.jpg" alt="coffee-5">
+            <h3>Espresso</h3>
+            <p>Classic black coffee</p>
+            <h3>$4.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/coffee-6.jpg" alt="coffee-6">
+            <h3>Latte</h3>
+            <p>Espresso coffee with the addition of steamed milk and dense milk foam</p>
+            <h3>$5.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/coffee-7.jpg" alt="coffee-7">
+            <h3>Latte macchiato</h3>
+            <p>Espresso with frothed milk and chocolate</p>
+            <h3>$5.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/coffee-8.jpg" alt="coffee-8">
+            <h3>Coffee with cognac</h3>
+            <p>Fragrant black coffee with cognac and whipped cream</p>
+            <h3>$6.50</h3>
+         </div>
+      </section>
+      <section class="cards hidden" id="catalog-tea">
+      </section>
+      <section class="cards hidden" id="catalog-desert">
+      </section>
+    </main>
+    <footer>
+         <div><h2>Sip, Savor, Smile.<br><span>It’s coffee time!</span></h2>
+           <div class="socials">
+               <button class="social"><img src="./img/twitter.svg"></button>
+               <button class="social"><img src="./img/instagram.svg"></button>
+               <button class="social"><img src="./img/facebook.svg"></button>
+           </div> 
+         </div>
+         <div id="contact-info">
+            <h3>Contact us</h3>
+            <a class="contact" href="https://maps.app.goo.gl/C9LFpzVpVExd2MCj6" target="_blank">
+               <img src="./img/pin-alt.svg" alt="pin-alt">
+               <p>8558 Green Rd.,  LA</p>
+            </a>
+            <a class="contact" href="tel:+16035550123">
+             <img src="./img/phone.svg" alt="phone">
+               <p>+1 (603) 555-0123</p>
+            </a>
+            <a class="contact">
+               <img src="./img/clock.svg" alt="clock">
+               <p>Mon–Sat: 9:00–23:00</p>
+            </a>
+         </div>
    </footer>
    <script src="./src/script.js"></script>
 </body>
