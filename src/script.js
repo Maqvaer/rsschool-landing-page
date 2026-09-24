@@ -21,6 +21,7 @@ button.addEventListener('click', function () {
 const left = document.getElementById('left-arrow');
 const right = document.getElementById('right-arrow');
 const slide = document.querySelectorAll('.slide');
+const scrollMarker = document.querySelectorAll('.scroll-marker');
 const slideCount = document.querySelectorAll('.slide').length;
 
 let currentIndex = 0;
@@ -35,10 +36,13 @@ function goToSlide(index) {
         for(let i=0; i<slideCount;i++){
           if(i === currentIndex){
             slide[i].classList.remove('hide');
+            scrollMarker[i].classList.add('scroll-marker-active');
           }
-          else slide[i].classList.add('hide');
+          else {
+            slide[i].classList.add('hide');
+          scrollMarker[i].classList.remove('scroll-marker-active');
+         }
         }
-       
        }
 
 left.addEventListener('click', function() {
