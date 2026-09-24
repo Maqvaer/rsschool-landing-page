@@ -135,14 +135,20 @@ header{
 }
 .menu{
    width: 72px;
-   font:600 16px/150% Inter, sans-serif; 
    display: flex;
    align-items: center;
    justify-content: space-between;
 }
+.menu p{
+   font-weight: 600;
+}
 
 .menu img{
    width: 20px;
+}
+
+.menu:hover{
+   border-bottom: 1px solid var(--primary-color);
 }
 
 main{
@@ -151,6 +157,21 @@ main{
  padding: 20pz;
 }
 
+#burger-button{
+   all:unset;
+   width: 44px;
+   height: 44px;
+   display: none;
+   border-radius: 50%;
+   border: 1px solid var(--primary-border-inverse);
+   cursor: pointer;
+}
+.burger-line{
+   width: 16px;
+   height: 2px;
+   background-color: var(--primary-color);
+   margin: 4px auto;
+}
 
  main section{
       margin: 80px auto;
@@ -185,14 +206,23 @@ main{
    background-color:#E1D4C9;
    border-radius: 100px;
    border: 1px solid #E1D4C9;
-   text-align:center;
    font:600 16px/150% Inter,sans-serif;
    cursor: pointer;
-}
+ }
+
 .text-hero a{
    all:unset;
 }
 
+.text-hero button:hover .menu-button-txt::after{
+    content: url(./img/coffee-cup.svg);
+    display: inline-block;
+    top:2px;
+    right: -4px;
+    width: 20px;
+    height: 20px;
+   position: relative;
+}
 
 #slider{
    width: 480px;
@@ -225,6 +255,29 @@ main{
    border:1px solid #665F55;
    background-color: inherit;
    cursor: pointer;
+}
+
+.slider .arrow:hover{
+   background-color: var(--primary-bgc-color-container);
+   color:var(--primary-color-inverse);
+}
+
+.scroll-marker-group{
+   width: fit-content;
+   margin: 30px auto;
+   display: flex;
+   align-items: center;
+}
+
+.scroll-marker{
+   height: 4px;
+   width: 40px;
+   background-color: var(--primary-border);
+   margin: 8px;
+}
+
+.scroll-marker-active{
+   background-color:var(--primary-border-inverse);
 }
 
 
@@ -295,7 +348,6 @@ main{
 }
 
 #mobile-app .offer-buttons{
-   width: 440px;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -312,6 +364,7 @@ main{
    display: flex;
    justify-content: center;
    align-items: center;
+   margin-right: 20px;
 }
 
 #mobile-app .offer-button img{
@@ -387,7 +440,9 @@ footer .contact p{
    color: var(--primary-color-inverse);
 }
 
-
+footer .contact:hover{
+   border-bottom:2px solid var(--primary-color-inverse);
+}
 
 .catalog-tabs{
    display: flex;
@@ -431,12 +486,14 @@ footer .contact p{
    font:600 16px/150% Inter,sans-serif;
 }
 
-.catalog-tab-active{
+.catalog-tab-active,.catalog-tab:hover {
    background-color: var(--primary-bgc-color-container);
 }
-.catalog-tab-active .catalog-tab-name{
+.catalog-tab-active,.catalog-tab:hover  .catalog-tab-name{
    color:var(--primary-color-inverse);
 } 
+
+
 
 #catalog-menu .cards{
    width: 96%;
@@ -472,6 +529,15 @@ footer .contact p{
     .links{
    display: none; 
      }
+     .menu{
+      display: none;
+     }
+     #burger-button{
+      display: block;
+     }
+     .text-hero{
+      width: 100%;
+     }
    .about{
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -506,16 +572,24 @@ footer .contact p{
    }
 }
 
-@media(max-width:393px){
-  .links{
+@media(max-width:380px){
+   body{
+      width: 100vw;
+   }
+   .links{
    display: none; 
      }
    h1{
-      font-size: 44px;
+      font-size: 42px;
+   }
+   h2{
+      font-size: 32px;
    }
    #hero{
-      background: center / contain no-repeat url(./img/img-hero.jpg) #333;
-      width: 98%;
+      background-image: url(./img/img-hero.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 96%;
    }
 
 .text-hero{
@@ -523,18 +597,24 @@ footer .contact p{
 }
 
 #slider{
-   width: 360px;
-   display: block;
+   width: 96%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.slide{
+   width: 100%;
+}
+.slide img{
+   width: 80%;
 }
  .arrow{
    display: none;
 }
+
 .offer-buttons{
    flex-direction: column !important;
 }
-#mobile-app>img{
-   margin-top: 100px;
-}
+
 .offer-button{
    margin-top: 20px !important;
 }
