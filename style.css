@@ -62,12 +62,15 @@ span{
 
 body{
    background-color: var(--primary-bgc-color);
+   position: relative;
 }
 
 header{
+   width: 100vw;
+   overflow-x: hidden;
    margin: 0 auto;
    padding: 20px;
-   height: 60px;
+   height: fit-content;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -76,7 +79,8 @@ header{
 
 .logo-img img{
    width: 100px;
-   background-color: inherit;;
+   background-color: inherit;
+   cursor: pointer;
 }
 
 .links{
@@ -88,6 +92,12 @@ header{
 .links li{
    padding:2px 10px;
    cursor: pointer;
+   border-bottom: 2px solid var(--primary-bgc-color);
+   transition: border-bottom 2s;
+}
+
+.links li:last-child{
+   display: none;
 }
 
 .links li a{
@@ -134,31 +144,31 @@ header{
    background-color: var(--primary-color-accent);
 }
 .menu{
-   width: 72px;
+   all:unset;
+   width: fit-content;
+   height: fit-content;
+   margin: 8px;
    display: flex;
    align-items: center;
-   justify-content: space-between;
+   border: 2px solid var(--primary-bgc-color);
+   transition: border-bottom 2s;
+   cursor: pointer;
 }
 .menu p{
    font-weight: 600;
+   margin: 4px;
 }
 
 .menu img{
    width: 20px;
+   margin-left: 2px;
 }
 
 .menu:hover{
-   border-bottom: 1px solid var(--primary-color);
-}
-
-main{
- width: 98%;
- margin: 0 auto;
- padding: 20pz;
+   border-bottom: 2px solid var(--primary-color);
 }
 
 #burger-button{
-   all:unset;
    width: 44px;
    height: 44px;
    display: none;
@@ -171,6 +181,12 @@ main{
    height: 2px;
    background-color: var(--primary-color);
    margin: 4px auto;
+}
+
+main{
+ width: 98%;
+ margin: 0 auto;
+ padding: 20pz;
 }
 
  main section{
@@ -199,7 +215,8 @@ main{
    color: var(--primary-color-inverse);
 }
 
-.text-hero button{
+.text-hero a{
+   all:unset;
    width: 200px;
    height: 64px;
    color:--primary-color;
@@ -208,19 +225,17 @@ main{
    border: 1px solid #E1D4C9;
    font:600 16px/150% Inter,sans-serif;
    cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
  }
 
-.text-hero a{
-   all:unset;
-}
-
-.text-hero button:hover .menu-button-txt::after{
+.text-hero a:hover .menu-button-txt::after{
     content: url(./img/coffee-cup.svg);
     display: inline-block;
     top:2px;
     right: -4px;
     width: 20px;
-    height: 20px;
    position: relative;
 }
 
@@ -341,10 +356,11 @@ main{
    height: 400px;
    margin: 40px;
 }
-#mobile-app h2,p{
+
+#mobile-app ~ h2,#mobile-app ~ p{
    text-align: left;
    margin:0;
-   padding: 0 !important;
+   padding: 0;
 }
 
 #mobile-app .offer-buttons{
@@ -354,7 +370,6 @@ main{
 }
 
 #mobile-app .offer-button{
-   all:unset;
    width: 200px;
    height: 64px;
    color:var(--primary-color);
@@ -376,6 +391,10 @@ main{
 
 #mobile-app .offer-button>div{
    height: fit-content;
+}
+
+#mobile-app .offer-button p{
+   margin: 0;
 }
 
 footer{
@@ -426,6 +445,7 @@ footer #contact-info h3{
 footer .contact{
   all:unset;
   display: flex;
+  align-items: center;
   margin-top: 20px;
   cursor: pointer;
 }
@@ -433,7 +453,7 @@ footer .contact img{
  width: 20px;
  height: 20px;
  color: var(--primary-color-inverse);
- margin-right: 12 px;
+ margin-right: 8px;
 }
 
 footer .contact p{
@@ -452,13 +472,12 @@ footer .contact:hover{
 }
 
 .catalog-tab{
-   all:unset;
    width: fit-content;
    height: 46px;
    display: flex;
    border:1px solid var(--primary-border);
    border-radius: 100px;
-   padding: 8px 24px;
+   padding: 16px 24px;
    display: flex;
    align-items: center;
    background-color: inherit;
@@ -495,7 +514,7 @@ footer .contact:hover{
 
 
 
-#catalog-menu .cards{
+ .cards{
    width: 96%;
    margin: 3% auto 6%;
    display: grid;
@@ -503,11 +522,11 @@ footer .contact:hover{
    gap: 2%;
 }
 
-#catalog-menu  .hidden{
+  .hidden{
    display: none;
 }
 
-#catalog-menu .card{
+ .card{
    width: 100%;
    height: 100%;
    border: 1px solid var(--primary-border);
@@ -515,25 +534,86 @@ footer .contact:hover{
    cursor: pointer;
 }
 
-#catalog-menu .card img{
+.card img{
    width: 100%;
-   border-top-left-radius:40px;
-   border-top-right-radius:40px;
+   border-radius:40px;
 }
-#catalog-menu .card h3,p{
+
+.card > h3,.card > p{
    text-align: left;
    padding: 1rem;
 }
 
+
+#button-more{
+   display: none;
+   width: 60px;
+   height: 60px;
+   margin: 20px auto;
+   color: var(--primary-border-inverse);
+}
+
+.btn-hide{
+   display: none !important;
+}
+
+.card-hide{
+   display: none;
+}
+
 @media(max-width:768px){
-    .links{
-   display: none; 
-     }
-     .menu{
-      display: none;
-     }
-     #burger-button{
+   	nav {
+		position: absolute;
+		top: 0;
+		right: -100vw;
+      width: 100vw;
+      height: 100vh;
+      transition: right 0.4s;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      background-color: var(--primary-bgc-color);
+	}
+    nav .links{
+      flex-direction: column;
+      width: fit-content;
+      padding: 30px 8px;
+    }
+   nav .links li{
+      height: 24px;
+      padding:24px 8px;
+      text-align: center;
+   }
+      .links li:last-child{
       display: block;
+   }
+
+    .active-burger-links{
+      right: 0;
+      top:80px;
+   }
+    .no-scroll-body{
+      height: 100vh;
+      overflow-y: hidden;
+    }
+ 
+     #burger-button{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1001;
+     }
+     .burger-button-active .burger-line:first-child{
+         transform: rotate(45deg); 
+         margin: 0;
+     }
+     .burger-button-active .burger-line:last-child{
+         transform: rotate(135deg);  
+         margin: -2px auto;
+     }
+   .menu{
+      display: none;
      }
      .text-hero{
       width: 100%;
@@ -565,20 +645,24 @@ footer .contact:hover{
       margin: 30px auto;
    }
   
-   #catalog-menu .cards{
-      height: 1080px;
-      overflow-y: hidden;
+  .cards{
+      height: fit-content;
       grid-template-columns: repeat(2, 1fr);
+      gap:8px;
+      margin: 3% auto 1%;
    }
+
+   .hide-cards .card:nth-child(n + 5){
+      display: none;
+   }
+
+    #button-more{
+      display: block;
+   }
+   
 }
 
 @media(max-width:380px){
-   body{
-      width: 100vw;
-   }
-   .links{
-   display: none; 
-     }
    h1{
       font-size: 42px;
    }
@@ -592,9 +676,9 @@ footer .contact:hover{
       width: 96%;
    }
 
-.text-hero{
-   width: 100%;
-}
+   .text-hero{
+      width: 100%;
+   }
 
 #slider{
    width: 96%;
@@ -618,10 +702,12 @@ footer .contact:hover{
 .offer-button{
    margin-top: 20px !important;
 }
-   #catalog-menu .cards{
-      height: 2260px;
-      overflow-y: hidden;
+  .cards{
+      height: fit-content;
+      margin:2% auto;
       grid-template-columns: 1fr;
+      gap:8px;
+      margin:16px auto;
    }
    .catalog-tab{
       padding: 8px;
