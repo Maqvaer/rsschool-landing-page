@@ -62,7 +62,6 @@ span{
 
 body{
    background-color: var(--primary-bgc-color);
-   position: relative;
 }
 
 header{
@@ -512,8 +511,6 @@ footer .contact:hover{
    color:var(--primary-color-inverse);
 } 
 
-
-
  .cards{
    width: 96%;
    margin: 3% auto 6%;
@@ -559,6 +556,114 @@ footer .contact:hover{
 
 .card-hide{
    display: none;
+}
+
+.modal-bg{
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+    z-index: 1;
+    overflow-y: hidden;
+}
+
+.modal-win{
+   position: absolute;
+   top:20%;
+   left:15%;
+   width: 70%;
+   height: fit-content;
+   background-color: var(--primary-bgc-color);
+   border-radius: 40px;
+   padding: 16px;
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-end;
+   flex-direction: row-reverse;
+}
+
+.modal-win > div{
+   width: 60%;
+}
+
+.product-name, .modal-win p {
+   text-align: left;
+   margin: 0.25rem;
+}
+
+.modal-img{
+   width: 30%;
+   margin-right: 16px;
+   border-radius: 40px;
+}
+
+.modal-display{
+   display: block;
+}
+
+.modal-display-body{
+   height: 100vh;
+   overflow-y: hidden;
+}
+
+.product-description{
+   margin: 1rem 0.25rem !important;
+}
+
+.product-params{
+   display: flex;
+   align-items: center;
+   width: 90%;
+   margin: 0.5rem 0;
+}
+
+.product-param{
+   border: 1px solid var(--primary-border);
+   border-radius: 100px;
+   width: fit-content;
+   margin-right: 0.5rem;
+   height: fit-content;
+   padding: 0.2rem;
+   display: flex;
+   align-items: center;
+}
+
+.product-param-mark{
+   background-color: var(--primary-border);
+   border-radius: 50%;
+   width: 30px;
+   height: 30px;
+   padding: 0.25rem 0.5rem;
+   margin: 0 0.25rem;
+}
+
+.product-param-vol{
+   margin: 0;
+}
+
+.container-prise{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   border-bottom: 1px solid var(--primary-border);
+   margin: 1.5rem 0;
+}
+
+.modal-btn-close{
+   width: 100%;
+   height: fit-content;
+   border: 2px solid var(--primary-border);
+   border-radius: 100px;
+   padding: 0.4rem;
+   display: flex;
+   align-self: center;
+   justify-content: center;
+   margin: 1rem 0;
 }
 
 @media(max-width:768px){
