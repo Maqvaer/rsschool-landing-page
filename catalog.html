@@ -3,21 +3,22 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
    <link rel="stylesheet" href="style.css">
    <title>COFFEE HOUSE</title>
 </head>
 <body>
-   <header>
-      <div class="logo-img">
-      <a href="./index.html"><img src="./img/Logo.svg" alt="logo"></a>
-      </div>
-      <nav>
+<header>
+       <a class="logo-img" href="./index.html">
+      <img src="./img/Logo.svg" alt="logo">
+      </a>
+      <nav id="nav">
          <ul class="links">
-            <li><a href="./index.html#favorite-coffee">Favorite coffee</a></li>
-            <li><a href="./index.html#about-us">About</a></li>
-            <li><a href="./index.html#mobile-app">Mobile app</a></li>
-            <li><a>Contact us</a></li>
+            <li><a href="#favorite-coffee">Favorite coffee</a></li>
+            <li><a href="#contact-us">About</a></li>
+            <li><a href="#mobile-app">Mobile app</a></li>
+            <li><a href="#contact-info">Contact us</a></li>
+            <li><a href='./catalog.html'>Menu<img src="./img/coffee-cup.svg" alt="coffee-cup"></a></li>
          </ul>
       </nav>
       <div class="actions">
@@ -29,35 +30,38 @@
                   <img alt="dark-theme" src="./img/Moon.svg" width="18">
             </button>
          </div>
-         <div class="menu">
-            <p>Menu</p>
-            <img src="./img/coffee-cup.svg" alt="coffee-cup">
-         </div>
+         <a class="menu" href="./catalog.html">
+            <p>Menu</p><img src="./img/coffee-cup.svg" alt="coffee-cup">
+         </a>
+         <div id="burger-button">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+      </div>
       </div>
    </header>
-   <main id="catalog-menu">
+   <main>
       <h2>Behind each of our cups<br>hides an <span>amazing surprise</span></h2>
       <div class="catalog-tabs">
-         <button class="catalog-tab catalog-tab-active">
+         <div class="catalog-tab catalog-tab-active">
             <div class="catalog-tab-icon">
                <img src="./img/tab-coffee.png" alt="tab-coffee">
             </div>
             <p class="catalog-tab-name">Coffee</p>
-         </button>
-         <button class="catalog-tab">
+         </div>
+         <div class="catalog-tab">
              <div class="catalog-tab-icon">
                <img src="./img/tab-tea.png" alt="tab-tea">
             </div>
             <p class="catalog-tab-name">Tea</p>
-         </button>
-         <button class="catalog-tab">
+         </div>
+         <div class="catalog-tab">
              <div class="catalog-tab-icon">
                <img src="./img/tab-desert.png" alt="tab-desert">
             </div>
             <p class="catalog-tab-name">Desert</p>
-         </button>
+         </div>
       </div>
-      <section class="cards" id="catalog-coffee">
+      <section class="cards hide-cards">
          <div class="card">
             <img src="./img/coffee-1.jpg" alt="coffee-1">
             <h3>Irish coffee</h3>
@@ -107,17 +111,136 @@
             <h3>$6.50</h3>
          </div>
       </section>
-      <section class="cards hidden" id="catalog-tea">
+      <section class="cards hide-cards hidden">
+          <div class="card">
+            <img src="./img/tea-1.jpg" alt="tea-1">
+            <h3>Moroccan</h3>
+            <p>Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+            <h3>$4.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/tea-2.jpg" alt="tea-2">
+            <h3>Ginger</h3>
+            <p>Original black tea with fresh ginger, lemon and honey</p>
+            <h3>$5.00</h3>
+         </div>
+          <div class="card">
+            <img src="./img/tea-3.jpg" alt="tea-3">
+            <h3>Cranberry</h3>
+            <p>Invigorating black tea with cranberry and honey</p>
+            <h3>$5.00</h3>
+         </div>
+          <div class="card">
+            <img src="./img/tea-4.jpg" alt="tea-4">
+            <h3>Sea buckthorn</h3>
+            <p>Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+            <h3>$5.50</h3>
+         </div>
       </section>
-      <section class="cards hidden" id="catalog-desert">
+      <section class="cards hide-cards hidden">
+          <div class="card">
+            <img src="./img/desert-1.jpg" alt="desert-1">
+            <h3>Marble cheesecake</h3>
+            <p>Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+            <h3>$3.50</h3>
+         </div>
+          <div class="card">
+            <img src="./img/desert-2.jpg" alt="desert-2">
+            <h3>Red velvet</h3>
+            <p>Layer cake with cream cheese frosting</p>
+            <h3>$4.00</h3>
+         </div>
+          <div class="card">
+            <img src="./img/desert-3.jpg" alt="desert-3">
+            <h3>Cheesecakes</h3>
+            <p>Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+            <h3>$4.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/desert-4.jpg" alt="desert-4">
+            <h3>Creme brulee</h3>
+            <p>Delicate creamy dessert in a caramel basket with wild berries</p>
+            <h3>$4.00</h3>
+         </div>
+                 <div class="card">
+            <img src="./img/desert-5.jpg" alt="desert-5">
+            <h3>Pancakes</h3>
+            <p>Tender pancakes with strawberry jam and fresh strawberries</p>
+            <h3>$4.50</h3>
+         </div>
+          <div class="card">
+            <img src="./img/desert-6.jpg" alt="desert-6">
+            <h3>Honey cake</h3>
+            <p>Classic honey cake with delicate custard</p>
+            <h3>$4.50</h3>
+         </div>
+          <div class="card">
+            <img src="./img/desert-7.jpg" alt="desert-7">
+            <h3>Chocolate cake</h3>
+            <p>Cake with hot chocolate filling and nuts with dried apricots</p>
+            <h3>$5.50</h3>
+         </div>
+         <div class="card">
+            <img src="./img/desert-8.jpg" alt="desert-8">
+            <h3>Black forest</h3>
+            <p>A combination of thin sponge cake with cherry jam and light chocolate mousse</p>
+            <h3>$6.50</h3>
+         </div>
       </section>
+      <div id="button-more">
+      <img src="./img/button-more.svg" alt="button-more">
+      </div>
+      <div class='modal-bg'>
+       <div class="modal-win">
+         <div>
+            <h3 class="product-name"></h3>
+            <p class="product-description"></p>
+            <p>Size:</p>
+            <div class="product-params">
+               <div class="product-param">
+                  <p class="product-param-mark">S</p>
+                  <p class="product-param-vol" id="volS"></p>
+               </div>
+               <div class="product-param">
+                  <p class="product-param-mark">M</p>
+                  <p class="product-param-vol" id="volM"></p>
+               </div>
+               <div class="product-param">
+                   <p class="product-param-mark">L</p>
+                  <p class="product-param-vol" id="volL"></p>
+               </div>
+            </div>
+            <p>Additives:</p>
+            <div class="product-params">
+               <div class="product-param">
+                  <p class="product-param-mark">1</p>
+                  <p class="product-param-vol" id="addOne"></p>
+               </div>
+               <div class="product-param">
+                  <p class="product-param-mark">2</p>
+                  <p class="product-param-vol" id="addTwo"></p>
+               </div>
+               <div class="product-param">
+                   <p class="product-param-mark">3</p>
+                  <p class="product-param-vol" id="addThree"></p>
+               </div>
+            </div>
+            <div class="container-prise">
+               <h3>Total:</h3>
+               <h3 id="TotalPrise">$</h3>
+            </div>
+            <p class="caption">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+            <div class="modal-btn-close"><p>Close</p></div>            
+         </div>
+       </div>
+      <div>
     </main>
     <footer>
          <div><h2>Sip, Savor, Smile.<br><span>It’s coffee time!</span></h2>
            <div class="socials">
-               <button class="social"><img src="./img/twitter.svg"></button>
-               <button class="social"><img src="./img/instagram.svg"></button>
-               <button class="social"><img src="./img/facebook.svg"></button>
+               <button class="social"><img src="./img/twitter.svg" alt="twitter-img"></button>
+               <button class="social"><img src="./img/instagram.svg" alt="instagram-img"></button>
+               <button class="social"><img src="./img/facebook.svg" alt="facebook-img"></button>
            </div> 
          </div>
          <div id="contact-info">
@@ -137,5 +260,8 @@
          </div>
    </footer>
    <script src="./src/script.js"></script>
+   <script src="./src/more.js"></script>
+   <script src="./src/catalog.js"></script>
+   <script src="./src/cards.js"></script>
 </body>
 </html>
