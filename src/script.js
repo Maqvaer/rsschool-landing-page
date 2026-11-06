@@ -23,6 +23,7 @@ button.addEventListener('click', function () {
 
 document.getElementById('burger-button').addEventListener("click", function(){
   document.getElementById('nav').classList.toggle('active-burger-links');
+  document.querySelector('.nav-container').classList.toggle('nav-burger');
   document.getElementById('burger-button').classList.toggle('burger-button-active');
   document.body.classList.toggle('no-scroll-body');
   if(document.getElementById('nav').classList.contains('active-burger-links')){

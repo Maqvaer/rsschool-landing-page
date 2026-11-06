@@ -1,14 +1,9 @@
 fetch('./src/jsons/products.json')
   .then(response => response.json())
   .then(result => {
-    console.log(result[0].name);
-    console.log(result);
-
 const modalBg = document.querySelector('.modal-bg');
 const modalWin = document.querySelector('.modal-win');
 const scrnWdth = document.documentElement.clientWidth;
-
-
 document.querySelectorAll('.card').forEach((elem,ind) => {
   elem.addEventListener('click',function(){
     modalBg.classList.add('modal-display');
@@ -36,6 +31,21 @@ document.querySelectorAll('.card').forEach((elem,ind) => {
       document.getElementById('modal-img').remove();
      }
     });
+
+
+   document.querySelectorAll('.size').forEach((elmnt,indx)=>{
+    elmnt.addEventListener('click', function(){
+         if(!elmnt.classList.contains('product-param-checked')){
+          document.querySelectorAll('.size').forEach(el => el.classList.remove('product-param-checked'));
+          elmnt.classList.add('product-param-checked');
+         }else if(elmnt.classList.contains('product-param-checked')){
+          elmnt.classList.remove('product-param-checked');
+        }
+    })       
+   })
+
+    document.getElementById('TotalPrise').textContent = `${result[ind].price} $`;
+
   })
 })
 }
