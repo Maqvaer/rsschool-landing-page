@@ -21,7 +21,7 @@ button.addEventListener('click', function () {
 
 //-------------------burger-menu---------------------
 
-document.getElementById('burger-button').addEventListener("click", function(){
+  document.getElementById('burger-button').addEventListener("click", function(){
   document.getElementById('nav').classList.toggle('active-burger-links');
   document.querySelector('.nav-container').classList.toggle('nav-burger');
   document.getElementById('burger-button').classList.toggle('burger-button-active');
@@ -34,6 +34,14 @@ document.getElementById('burger-button').addEventListener("click", function(){
     document.querySelector('body').classList.remove('no-scroll-body');
   }
 });
+ [...document.querySelector('.links').children].forEach(element => {
+  element.addEventListener('click', function(){
+  document.getElementById('nav').classList.remove('active-burger-links');
+  document.querySelector('.nav-container').classList.remove('nav-burger');
+  document.getElementById('burger-button').classList.remove('burger-button-active');
+  document.body.classList.remove('no-scroll-body');
+  })
+ });
 }
 });
 //-------------------------------------------------------------

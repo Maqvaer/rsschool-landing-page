@@ -769,9 +769,11 @@ fieldset{
 
    #mobile-app>div{
       width: 100%;
+      align-items: center;
    }
     #mobile-app>img{
       width: 70%;
+      margin-top: 10%;
     }
    footer{
       flex-direction: column;
