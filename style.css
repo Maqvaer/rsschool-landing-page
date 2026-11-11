@@ -810,6 +810,7 @@ fieldset{
    }
    h2{
       font-size: 32px;
+      margin: auto;
    }
    #hero{
       background-image: url(./img/img-hero.jpg);
@@ -826,12 +827,19 @@ fieldset{
    width: 96%;
   align-items: center;
   flex-wrap: wrap;
+  height: fit-content;
 }
 .slide{
    width: 100%;
+   height: fit-content;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
 }
 .slide img{
    width: 80%;
+   height: fit-content;
 }
  .arrow{
    display: none;

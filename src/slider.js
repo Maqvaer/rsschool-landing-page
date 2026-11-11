@@ -34,3 +34,9 @@ right.addEventListener('click', function() {
 });
 
 goToSlide(0);
+
+if(document.documentElement.clientWidth <= 380){
+  slide.forEach(el => el.addEventListener('click', function(){
+    goToSlide(currentIndex + 1);
+  }));
+}
