@@ -31,21 +31,53 @@ document.querySelectorAll('.card').forEach((elem,ind) => {
       document.getElementById('modal-img').remove();
      }
     });
-
-
+   
+   let price =  result[ind].price;
+   let priceAddVol = 0;
+   let priceAdditives = 0;
+   let totalPrice = 0;
+    
    document.querySelectorAll('.size').forEach((elmnt,indx)=>{
     elmnt.addEventListener('click', function(){
          if(!elmnt.classList.contains('product-param-checked')){
           document.querySelectorAll('.size').forEach(el => el.classList.remove('product-param-checked'));
+              const vol = elmnt.firstElementChild.textContent.toLowerCase();
+              priceAddVol = result[ind].sizes[vol]['add-price'];
           elmnt.classList.add('product-param-checked');
          }else if(elmnt.classList.contains('product-param-checked')){
           elmnt.classList.remove('product-param-checked');
         }
     })       
    })
+  
+   document.querySelectorAll('.additives').forEach((el) => {
+       el.addEventListener('click', function(){
+        el.classList.toggle('product-param-checked');
+        const additive = el.lastElementChild.textContent;
+        const additives = result[ind].additives;
+        if(el.classList.contains('product-param-checked')){
+        additives.forEach((elmt, index) => {
+          if(elmt.name === additive){
+            priceAdditives += Number(additives[index]['add-price']);
+          }
+        })
+        } else{
+           additives.forEach((elmt, index) => {
+          if(elmt.name === additive){
+            priceAdditives -= Number(additives[index]['add-price']);
+            console.log(priceAdditives);
+          }
+        })
+        }
 
-    document.getElementById('TotalPrise').textContent = `${result[ind].price} $`;
-
+       })   
+   })
+   
+ document.getElementById('TotalPrise').textContent = `${price} $`;
+ document.querySelectorAll('.product-params').forEach(el => el.addEventListener('click', function(){
+ totalPrice = Number(price) + Number(priceAddVol) + priceAdditives;   
+ document.getElementById('TotalPrise').textContent = `${totalPrice.toFixed(2)} $`;
+ }))
   })
 })
 }

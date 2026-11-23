@@ -73,7 +73,7 @@ header{
    padding: 20px;
    height: fit-content;
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
    color:var(--primary-color);
 }
@@ -85,6 +85,7 @@ header{
 }
 .nav-container{
    width: 40%;
+   margin-left: 15%;
    z-index: 1;
 }
 
@@ -582,9 +583,6 @@ footer .contact:hover{
 }
 
 .modal-win{
-   position: absolute;
-   top:20%;
-   left:20%;
    width: 60%;
    height: fit-content;
    background-color: var(--primary-bgc-color);
@@ -611,7 +609,9 @@ footer .contact:hover{
 }
 
 .modal-display{
-   display: block;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .modal-display-body{
@@ -662,10 +662,12 @@ fieldset{
    margin: 0;
 }
 
-.product-param:hover, .product-param-checked{
+.product-param-checked{
   background-color: var(--primary-bgc-color-container);
 }
-
+.product-param:hover{
+   scale: 1.1;
+}
 
 .container-prise{
    width: 100%;
