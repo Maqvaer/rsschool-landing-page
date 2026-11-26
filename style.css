@@ -68,11 +68,8 @@ body{
 }
 
 header{
-   width: 100vw;
-   overflow-x: hidden;
    margin: 0 auto;
    padding: 20px;
-   height: fit-content;
    display: flex;
    justify-content: space-around;
    align-items: center;
@@ -154,19 +151,19 @@ header{
    all:unset;
    width: fit-content;
    height: fit-content;
-   margin: 8px;
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    border: 2px solid var(--primary-bgc-color);
    transition: border-bottom 2s;
    cursor: pointer;
 }
 .menu p{
    font-weight: 600;
-   margin: 4px;
+   margin: 0 4px;
 }
 
 .menu img{
+   height: fit-content;
    width: 20px;
    margin-left: 2px;
 }
@@ -237,13 +234,21 @@ main{
    justify-content: center;
  }
 
+ .menu-button-txt{
+   display: block;
+   width: 100%;
+   padding: 12px 60px;
+ }
+ .text-hero a:hover .menu-button-txt{
+   position: relative;
+ }
+
 .text-hero a:hover .menu-button-txt::after{
     content: url(./img/coffee-cup.svg);
+    width: 30px;
     display: inline-block;
-    top:2px;
-    right: -4px;
-    width: 20px;
-   position: relative;
+    top: 12px;
+    position: absolute;
 }
 
 #slider{
@@ -441,6 +446,9 @@ footer .social img{
    height: 24px;
    color:var(--primary-color-inverse);
    align-self: center;
+}
+footer .social:hover{
+   scale: 1.1;
 }
 
 footer #contact-info h3{
@@ -699,6 +707,7 @@ fieldset{
    .nav-container{
    width: 100vw;
    height: 100vh;
+   margin: 0;
    position: absolute;
    top: 0;
    left: 0;
@@ -804,6 +813,17 @@ fieldset{
     #button-more{
       display: block;
    }
+   .modal-win{
+      width: 70%;
+      flex-direction: column-reverse;
+   }
+   .modal-win>div{
+      width: 100%;
+      padding: 12px;
+   }
+   .modal-win>img{
+      width: 100%;
+   }
    
 }
 
@@ -864,5 +884,15 @@ fieldset{
    .catalog-tab{
       padding: 8px;
       height: 36px;
+   }
+   .modal-win{
+      width: 96%;
+   }
+   .product-param-vol{
+      font-size: 12px;
+   }
+   .size{
+      width: fit-content;
+      white-space: nowrap;
    }
 }
